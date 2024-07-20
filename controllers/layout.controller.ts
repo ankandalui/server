@@ -57,20 +57,6 @@ export const createLayout = CatchAsyncError(
           categories: categoriesItems,
         });
       }
-      if (type === "Courseyear") {
-        const { courseyear } = req.body;
-        const courseyearItems = await Promise.all(
-          courseyear.map(async (item: any) => {
-            return {
-              title: item.title,
-            };
-          })
-        );
-        await LayoutModel.create({
-          type: "Courseyear",
-          courseyear: courseyearItems,
-        });
-      }
 
       res.status(200).json({
         success: true,

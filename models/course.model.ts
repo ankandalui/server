@@ -36,7 +36,6 @@ export interface ICourse extends Document {
   name: string;
   description: string;
   categories: string;
-  courseyear: string;
   // subjects: string;
   price: number;
   estimatedPrice?: number;
@@ -106,10 +105,7 @@ const courseSchema = new Schema<ICourse>(
       type: String,
       required: true,
     },
-    courseyear: {
-      type: String,
-      required: true,
-    },
+
     // subjects: {
     //   type: String,
     //   required: true,
